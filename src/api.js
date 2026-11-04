@@ -1,5 +1,5 @@
 const API_BASE_URL = (
-  import.meta.env.VITE_API_BASE_URL ?? (import.meta.env.DEV ? "" : "http://localhost:5001")
+  import.meta.env.VITE_API_BASE_URL ?? (import.meta.env.DEV ? "" : "https://ai-careerpilot-api.onrender.com")
 ).replace(/\/+$/, "");
 
 export async function apiRequest(path, { method = "GET", body, signal } = {}) {
