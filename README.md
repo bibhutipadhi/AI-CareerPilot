@@ -19,7 +19,7 @@ The app needs separate frontend and API hosting; GitHub Pages alone cannot run t
 1. Push this project to a GitHub repository.
 2. In Render, create a Blueprint from that repository. `render.yaml` configures the API service; enter `GEMINI_API_KEY` as a Render secret when prompted. The API can start without this key, but AI features will be unavailable.
 3. In Vercel, import the same repository. Use the repository root, build command `npm run build`, and output directory `dist`.
-4. In Vercel project settings, set `VITE_API_BASE_URL` to the Render API's HTTPS origin (without a trailing slash), then redeploy the frontend.
+4. The frontend defaults to `https://ai-careerpilot-api.onrender.com` for production. If you use another API host, set `VITE_API_BASE_URL` in Vercel to that HTTPS origin (without a trailing slash), then redeploy the frontend.
 5. In Render, set `CORS_ORIGINS` to the exact Vercel site origin (for example, `https://your-project.vercel.app`, without a trailing slash), then redeploy the API.
 
 Keep API keys in the hosting provider's secret settings, never in Vite environment variables or committed files. Vercel preview URLs are not allowed by the API unless added to `CORS_ORIGINS`.
